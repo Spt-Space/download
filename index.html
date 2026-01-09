@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>文件下载(space)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      margin: 0;
+    }
+    .download-btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background: #4CAF50;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+    .download-btn:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <button class="download-btn" onclick="downloadFile('file/di/di_mp4.MOV','di mp4')">下载-DI-MP4</button>
+
+  <script>
+    function downloadFile(path,name) {
+      const link = document.createElement('a');
+      link.href = `${path}`; // 替换为实际文件地址
+      link.download = `${name}`; // 指定下载文件名
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
